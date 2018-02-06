@@ -20,11 +20,12 @@ class Transfer
       @status= "complete"
     else
       @status = "rejected" #this also rejects the case that status is not pending.
-    end 
-  end 
-
-
+    end
   end
+  def reverse_transfer
+    @sender.balance += @amount;
+    @receiver.balance -= @amount 
 
-  # your code here
+    @status= "reversed"
+# your code here
 end
