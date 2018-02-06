@@ -14,13 +14,15 @@ class Transfer
     end
   end
   def execute_transaction
-    if @status == "pending"  && @sender.balance >= @amount 
+    if @status == "pending"  && @sender.balance >= @amount
       @sender.balance -= @amount;
       @receiver.balance += @amount
       @status= "complete"
-    else 
-      @status = "rejected" #this also rejects the case that status is not pending. 
-      
+    else
+      @status = "rejected" #this also rejects the case that status is not pending.
+    end 
+  end 
+
 
   end
 
